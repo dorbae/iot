@@ -9,12 +9,11 @@
  * @author dorbae(dorbae.io@gmail.com)
  *
  */
-package io.dorbae.iot.tutorial.pi4j;
+package io.dorbae.iot.tutorial.pi4j.dog;
 
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.GpioPinDigitalInput;
-import com.pi4j.io.gpio.PinPullResistance;
 import com.pi4j.io.gpio.RaspiPin;
 import com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent;
 import com.pi4j.io.gpio.event.GpioPinListenerDigital;
@@ -23,16 +22,17 @@ import com.pi4j.io.gpio.event.GpioPinListenerDigital;
  * @author dorbae
  *
  */
-public class ListenGpioExample {
+public class SoundDetector {
 
 	public static void main(String args[]) throws InterruptedException {
-        System.out.println( "Start Sound Detector...");
+        System.out.println("<--Pi4J--> GPIO Listen Example ... started.");
 
         // create gpio controller
         final GpioController gpio = GpioFactory.getInstance();
 
         // provision gpio pin #02 as an input pin with its internal pull down resistor enabled
-        final GpioPinDigitalInput myButton = gpio.provisionDigitalInputPin(RaspiPin.GPIO_04, PinPullResistance.PULL_DOWN);
+//        final GpioPinDigitalInput myButton = gpio.provisionDigitalInputPin(RaspiPin.GPIO_02, PinPullResistance.PULL_DOWN);
+        final GpioPinDigitalInput myButton = gpio.provisionDigitalInputPin( RaspiPin.GPIO_04);
 
         // set shutdown state for this input pin
         myButton.setShutdownOptions(true);

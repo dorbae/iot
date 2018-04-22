@@ -1,5 +1,7 @@
 Manifest-Version: 1.0
 Built-By: dorbae
 Build-Jdk: 1.8.0_162
+Class-Path: ${lib.dir}/pi4j-core-1.1.jar
+Main-Class: io.dorbae.iot.tutorial.pi4j.ListenGpioExample
 Created-By: Maven Integration for Eclipse
 
